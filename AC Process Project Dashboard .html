@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
+      /* ছবির এক্স্যাক্ট কালার প্যালেট */
       --bg-base: #030a14;
       --card-bg: #071322;
       --card-inner: #0b1a2d;
@@ -21,23 +22,6 @@
       --accent-purple: #d500f9;
       --accent-blue: #2979ff;
       --accent-gold: #ffd600;
-      --control-bg: #081628;
-    }
-
-    body.light-mode {
-      --bg-base: #f1f5f9;
-      --card-bg: #ffffff;
-      --card-inner: #f8fafc;
-      --border-color: #cbd5e1;
-      --text-main: #1e293b; 
-      --text-sub: #475569;  
-      --accent-cyan: #0284c7;
-      --accent-green: #059669;
-      --accent-orange: #d97706;
-      --accent-purple: #7c3aed;
-      --accent-blue: #2563eb;
-      --accent-gold: #b45309;
-      --control-bg: #e2e8f0;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -48,7 +32,6 @@
       padding: 16px 20px;
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
-      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     .main-wrapper {
@@ -86,7 +69,7 @@
     .brand-title h1 {
       font-size: 20px;
       font-weight: 800;
-      color: var(--text-main);
+      color: #fff;
       letter-spacing: 0.5px;
       text-transform: uppercase;
     }
@@ -107,51 +90,34 @@
       flex-wrap: wrap;
     }
 
-    .ctrl-select, .btn-export, .btn-toggle, .btn-theme {
-      background: var(--control-bg);
+    .ctrl-select, .btn-export {
+      background: #081628;
       border: 1px solid var(--border-color);
-      color: var(--text-main);
+      color: #fff;
       padding: 6px 10px;
       border-radius: 6px;
       font-size: 11px;
       font-weight: 600;
       outline: none;
       cursor: pointer;
-      transition: all 0.2s;
-    }
-
-    .ctrl-select:hover, .btn-export:hover, .btn-toggle:hover, .btn-theme:hover {
-      border-color: var(--accent-cyan);
-    }
-
-    .btn-toggle {
-      background: rgba(0, 229, 255, 0.15);
-      border-color: var(--accent-cyan);
-      color: var(--accent-cyan);
-    }
-
-    .btn-theme {
-      background: rgba(255, 183, 3, 0.15);
-      border-color: var(--accent-gold);
-      color: var(--text-main);
     }
 
     .plan-box {
       display: flex;
       align-items: center;
-      background: var(--control-bg);
+      background: #081628;
       border: 1px solid var(--accent-cyan);
       border-radius: 6px;
       padding: 4px 8px;
       gap: 6px;
-      box-shadow: 0 0 10px rgba(0, 229, 255, 0.15);
+      box-shadow: 0 0 10px rgba(0, 229, 255, 0.2);
     }
 
     .plan-box label { font-size: 11px; color: var(--accent-cyan); font-weight: 700; }
     .plan-box input {
       background: transparent;
       border: none;
-      color: var(--text-main);
+      color: #fff;
       font-size: 12px;
       font-weight: 800;
       width: 75px;
@@ -178,9 +144,9 @@
     }
 
     .multiselect-btn {
-      background: var(--control-bg);
+      background: #081628;
       border: 1px solid var(--accent-cyan);
-      color: var(--text-main);
+      color: #fff;
       padding: 6px 10px;
       border-radius: 6px;
       font-size: 11px;
@@ -189,7 +155,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      min-width: 145px;
+      min-width: 155px;
       gap: 8px;
     }
 
@@ -199,10 +165,10 @@
       top: calc(100% + 5px);
       left: 0;
       width: 220px;
-      background: var(--card-bg);
+      background: #071322;
       border: 1px solid var(--border-color);
       border-radius: 6px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.8);
       z-index: 1000;
       max-height: 240px;
       overflow-y: auto;
@@ -216,10 +182,10 @@
       gap: 8px;
       padding: 6px 12px;
       font-size: 11px;
-      color: var(--text-sub);
+      color: #cbd5e1;
       cursor: pointer;
     }
-    .multiselect-item:hover { background: rgba(0, 229, 255, 0.15); color: var(--text-main); }
+    .multiselect-item:hover { background: rgba(0, 229, 255, 0.15); color: #fff; }
     .multiselect-item input[type="checkbox"] { accent-color: var(--accent-cyan); cursor: pointer; }
     .multiselect-divider { height: 1px; background: var(--border-color); margin: 4px 0; }
 
@@ -238,12 +204,12 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
     }
 
     .kpi-info { display: flex; flex-direction: column; gap: 2px; }
     .kpi-label { font-size: 10.5px; color: var(--text-sub); font-weight: 700; text-transform: uppercase; }
-    .kpi-val { font-size: 26px; font-weight: 800; color: var(--text-main); }
+    .kpi-val { font-size: 26px; font-weight: 800; color: #fff; }
     .kpi-sub { font-size: 10px; color: var(--text-sub); }
 
     .mini-donut {
@@ -259,7 +225,7 @@
     }
 
     .quote-box {
-      background: var(--card-inner);
+      background: linear-gradient(135deg, #091a2e 0%, #050e18 100%);
       border: 1px solid var(--border-color);
       border-radius: 8px;
       padding: 10px 12px;
@@ -269,7 +235,7 @@
       gap: 2px;
     }
 
-    .quote-box p { font-size: 11px; font-style: italic; color: var(--text-main); font-weight: 600; }
+    .quote-box p { font-size: 11px; font-style: italic; color: #fff; font-weight: 600; }
     .quote-box span { font-size: 10px; color: var(--accent-cyan); display: flex; align-items: center; gap: 4px; }
 
     /* SAVINGS PER AC BANNER */
@@ -280,19 +246,19 @@
     }
 
     .ac-saving-card {
-      background: var(--card-bg);
+      background: linear-gradient(135deg, #071629 0%, #030b14 100%);
       border: 1px solid var(--border-color);
       border-radius: 8px;
       padding: 10px 14px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
 
     .ac-saving-info { display: flex; flex-direction: column; gap: 2px; }
     .ac-saving-label { font-size: 10px; color: var(--text-sub); font-weight: 700; text-transform: uppercase; }
-    .ac-saving-value { font-size: 19px; font-weight: 800; color: var(--text-main); }
+    .ac-saving-value { font-size: 19px; font-weight: 800; color: #fff; }
     .ac-saving-unit { font-size: 9.5px; color: var(--text-sub); }
 
     /* TOP 4 MAJOR CARDS */
@@ -306,7 +272,7 @@
     .section-head h3 {
       font-size: 13px;
       font-weight: 800;
-      color: var(--text-main);
+      color: #fff;
       display: flex;
       align-items: center;
       gap: 6px;
@@ -320,7 +286,7 @@
     }
 
     .major-card {
-      background: var(--card-bg);
+      background: linear-gradient(145deg, #0a192e 0%, #06111f 100%);
       border: 1px solid var(--border-color);
       border-radius: 8px;
       padding: 10px 12px;
@@ -328,7 +294,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
       transition: transform 0.2s;
     }
 
@@ -337,7 +303,9 @@
     .major-card::before {
       content: '';
       position: absolute;
-      left: 0; top: 0; bottom: 0;
+      left: 0;
+      top: 0;
+      bottom: 0;
       width: 4px;
       border-radius: 4px 0 0 4px;
     }
@@ -362,31 +330,13 @@
     .major-card.r3 .pill-rank { background: rgba(213, 0, 249, 0.2); color: var(--accent-purple); }
     .major-card.r4 .pill-rank { background: rgba(255, 145, 0, 0.2); color: var(--accent-orange); }
 
-    .tag-cat { font-size: 9px; padding: 2px 6px; border-radius: 4px; font-weight: 700; background: var(--card-inner); color: var(--accent-cyan); }
-    .card-title { font-size: 11.5px; font-weight: 700; color: var(--text-main); min-height: 28px; line-height: 1.35; margin-bottom: 8px; }
+    .tag-cat { font-size: 9px; padding: 2px 6px; border-radius: 4px; font-weight: 700; background: #0c2038; color: var(--accent-cyan); }
+    .card-title { font-size: 11.5px; font-weight: 700; color: #fff; min-height: 28px; line-height: 1.35; margin-bottom: 8px; }
     .card-bot { display: flex; justify-content: space-between; align-items: center; }
     .val-saving { font-size: 13px; font-weight: 800; color: var(--accent-cyan); }
     .pill-status { font-size: 9.5px; font-weight: 700; padding: 2px 7px; border-radius: 10px; }
     .pill-status.done { background: rgba(0, 230, 118, 0.2); color: var(--accent-green); }
     .pill-status.prog { background: rgba(255, 145, 0, 0.2); color: var(--accent-orange); }
-
-    /* HIDEABLE SECTION WRAPPER */
-    #hideableSection {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      max-height: 2000px;
-      opacity: 1;
-      overflow: hidden;
-      transition: max-height 0.4s ease, opacity 0.3s ease, margin 0.3s ease;
-    }
-    
-    #hideableSection.hidden {
-      max-height: 0;
-      opacity: 0;
-      margin: 0;
-      pointer-events: none;
-    }
 
     /* CHARTS ROW */
     .charts-row {
@@ -396,13 +346,13 @@
     }
 
     .panel {
-      background: var(--card-bg);
+      background: linear-gradient(160deg, #09182b 0%, #050f1b 100%);
       border: 1px solid var(--border-color);
       border-radius: 8px;
       padding: 12px;
       display: flex;
       flex-direction: column;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
     }
 
     .panel-header {
@@ -412,7 +362,7 @@
       margin-bottom: 8px;
     }
 
-    .panel-header h4 { font-size: 11.5px; font-weight: 800; color: var(--text-main); text-transform: uppercase; }
+    .panel-header h4 { font-size: 11.5px; font-weight: 800; color: #fff; text-transform: uppercase; }
 
     /* 3D DOUGHNUT */
     .donut-wrapper {
@@ -457,7 +407,7 @@
     }
 
     .donut-center-info strong {
-      font-size: 11px;
+      font-size: 11.5px;
       color: var(--accent-cyan);
       font-weight: 800;
       margin-top: 1px;
@@ -479,18 +429,18 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: var(--card-inner);
+      background: rgba(11, 26, 45, 0.6);
       padding: 4px 6px;
       border-radius: 4px;
       border-left: 3px solid transparent;
-      border-top: 1px solid rgba(150,150,150,0.05);
+      border-top: 1px solid rgba(255,255,255,0.04);
     }
 
     .donut-legend-item span {
       display: flex;
       align-items: center;
       gap: 4px;
-      color: var(--text-main);
+      color: #e2e8f0;
       font-weight: 600;
       white-space: nowrap;
       overflow: hidden;
@@ -499,7 +449,7 @@
     }
 
     .donut-legend-item strong {
-      color: var(--text-main);
+      color: #ffffff;
       font-weight: 700;
       white-space: nowrap;
       font-size: 9px;
@@ -508,9 +458,30 @@
     /* BOTTOM ROW */
     .bottom-row {
       display: grid;
-      grid-template-columns: 1.7fr 1.3fr;
+      grid-template-columns: 1.2fr 2.3fr 1.3fr;
       gap: 12px;
     }
+
+    .insights-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      flex: 1;
+    }
+
+    .insight-card {
+      background: var(--card-inner);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .insight-card span { font-size: 10px; color: var(--text-sub); font-weight: 700; text-transform: uppercase; }
+    .insight-card strong { font-size: 14px; color: #fff; font-weight: 800; margin: 4px 0; word-break: break-word; }
+    .insight-card small { font-size: 9px; color: var(--accent-green); font-weight: 600; }
 
     /* Table Styles */
     .table-tools {
@@ -522,9 +493,9 @@
     }
 
     .input-search {
-      background: var(--card-inner);
+      background: #050f1a;
       border: 1px solid var(--border-color);
-      color: var(--text-main);
+      color: #fff;
       padding: 4px 8px;
       border-radius: 5px;
       font-size: 10.5px;
@@ -546,7 +517,6 @@
 
     th { color: var(--text-sub); font-weight: 700; text-transform: uppercase; }
     .center { text-align: center !important; }
-    td { color: var(--text-main); }
 
     .pagination-bar {
       display: flex;
@@ -559,7 +529,7 @@
 
     .page-btn-group { display: flex; gap: 4px; }
     .page-btn {
-      background: var(--control-bg);
+      background: #081628;
       border: 1px solid var(--border-color);
       color: var(--text-sub);
       font-size: 10px;
@@ -577,7 +547,7 @@
       font-size: 10px;
       color: var(--text-sub);
       padding: 8px 4px 0 4px;
-      border-top: 1px solid rgba(150, 150, 150, 0.15);
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
       margin-top: 4px;
       flex-wrap: wrap;
       gap: 8px;
@@ -587,14 +557,6 @@
       display: flex;
       align-items: center;
       gap: 12px;
-    }
-
-    .dev-credit {
-      font-style: italic;
-      font-size: 9px;
-      color: var(--text-sub);
-      opacity: 0.85;
-      letter-spacing: 0.3px;
     }
 
     .connection-badge {
@@ -666,16 +628,8 @@
       </div>
 
       <div class="header-controls">
-        <button id="themeToggleBtn" class="btn-theme" onclick="toggleTheme()">
-          <i class="fa-solid fa-moon"></i> Light Mode
-        </button>
-
-        <button id="toggleViewsBtn" class="btn-toggle" onclick="toggleMainSection()">
-          <i class="fa-solid fa-eye"></i> Show Charts & Tables
-        </button>
-
         <div class="plan-box" title="Type annual AC target units for this Fiscal Year">
-          <label><i class="fa-solid fa-industry"></i> Forecasted Plan:</label>
+          <label><i class="fa-solid fa-industry"></i> Plan:</label>
           <input type="number" id="productionPlanInput" value="120000" oninput="onPlanChange()">
         </div>
 
@@ -727,7 +681,7 @@
         <div class="kpi-info">
           <span class="kpi-label">Completed Projects</span>
           <span class="kpi-val" id="kpiCompletedProjects">0</span>
-          <span class="kpi-sub">Realized: <strong id="kpiCompletedVal" style="color: var(--text-main);">৳ 0 BDT</strong></span>
+          <span class="kpi-sub">Realized: <strong id="kpiCompletedVal" style="color: #fff;">৳ 0 BDT</strong></span>
         </div>
         <div class="mini-donut" style="border-color: var(--accent-green); color: var(--accent-green);" id="kpiCompletedPct">0%</div>
       </div>
@@ -736,7 +690,7 @@
         <div class="kpi-info">
           <span class="kpi-label">Ongoing Projects</span>
           <span class="kpi-val" id="kpiOngoingProjects">0</span>
-          <span class="kpi-sub">Pipeline: <strong id="kpiOngoingVal" style="color: var(--text-main);">৳ 0 BDT</strong></span>
+          <span class="kpi-sub">Pipeline: <strong id="kpiOngoingVal" style="color: #fff;">৳ 0 BDT</strong></span>
         </div>
         <div class="mini-donut" style="border-color: var(--accent-orange); color: var(--accent-orange);" id="kpiOngoingPct">0%</div>
       </div>
@@ -762,7 +716,7 @@
         <div class="ac-saving-info">
           <span class="ac-saving-label">Total Saving Per AC</span>
           <span class="ac-saving-value" id="acTotalSaving" style="color: var(--accent-cyan);">৳ 0 BDT</span>
-          <span class="ac-saving-unit">Selected Scope / Forecasted Plan</span>
+          <span class="ac-saving-unit">Selected Scope / Plan</span>
         </div>
         <i class="fa-solid fa-snowflake" style="font-size: 22px; color: var(--accent-cyan); opacity: 0.9;"></i>
       </div>
@@ -787,9 +741,9 @@
 
       <div class="ac-saving-card" style="border-left: 3px solid var(--accent-purple);">
         <div class="ac-saving-info">
-          <span class="ac-saving-label">Forecasted Plan Units</span>
+          <span class="ac-saving-label">Annual AC Target</span>
           <span class="ac-saving-value" id="acPlanDisplay">120,000</span>
-          <span class="ac-saving-unit">Production Capacity Target</span>
+          <span class="ac-saving-unit">Production Capacity Units</span>
         </div>
         <i class="fa-solid fa-chart-line" style="font-size: 22px; color: var(--accent-purple); opacity: 0.9;"></i>
       </div>
@@ -802,118 +756,136 @@
     </div>
     <div class="major-grid" id="top4Container"></div>
 
-    <!-- HIDEABLE SECTION -->
-    <div id="hideableSection" class="hidden">
+    <!-- CHARTS ROW -->
+    <div class="charts-row">
+      <!-- 1. Monthly Line/Bar Chart -->
+      <div class="panel">
+        <div class="panel-header">
+          <h4>Monthly vs Cumulative Savings Trend</h4>
+        </div>
+        <div style="flex: 1; min-height: 185px;">
+          <canvas id="savingsTrendChart"></canvas>
+        </div>
+      </div>
+
+      <!-- 2. 3D Doughnut with Center Info & Window Fit Grid -->
+      <div class="panel">
+        <div class="panel-header">
+          <h4>Savings by Category</h4>
+        </div>
+        <div class="donut-wrapper">
+          <div class="donut-canvas-box">
+            <canvas id="categoryDonutChart"></canvas>
+            <div class="donut-center-info">
+              <small>Total Scope</small>
+              <strong id="donutCenterTotal">৳ 0 Cr</strong>
+            </div>
+          </div>
+          <div class="donut-legend-list" id="donutLegendContainer"></div>
+        </div>
+      </div>
+
+      <!-- 3. Engineer Bar Chart -->
+      <div class="panel">
+        <div class="panel-header">
+          <h4>Engineer / Concern Person (Top 7)</h4>
+        </div>
+        <div style="flex: 1; min-height: 185px;">
+          <canvas id="engineerBarChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTTOM ROW -->
+    <div class="bottom-row">
       
-      <!-- CHARTS ROW -->
-      <div class="charts-row">
-        <!-- 1. Monthly Line/Bar Chart -->
-        <div class="panel">
-          <div class="panel-header">
-            <h4>Monthly vs Cumulative Savings Trend</h4>
-          </div>
-          <div style="flex: 1; min-height: 185px;">
-            <canvas id="savingsTrendChart"></canvas>
-          </div>
+      <!-- KEY INSIGHTS -->
+      <div class="panel">
+        <div class="panel-header">
+          <h4><i class="fa-solid fa-lightbulb"></i> Key Insights</h4>
         </div>
-
-        <!-- 2. Doughnut Chart -->
-        <div class="panel">
-          <div class="panel-header">
-            <h4>Savings by Category</h4>
+        <div class="insights-grid">
+          <div class="insight-card">
+            <span>Realization Rate</span>
+            <strong id="insightRealization">0.0%</strong>
+            <small id="insightSavingsPerAc">৳ 0 BDT / AC</small>
           </div>
-          <div class="donut-wrapper">
-            <div class="donut-canvas-box">
-              <canvas id="categoryDonutChart"></canvas>
-              <div class="donut-center-info">
-                <small>Total Scope</small>
-                <strong id="donutCenterTotal">৳ 0 BDT</strong>
-              </div>
-            </div>
-            <div class="donut-legend-list" id="donutLegendContainer"></div>
+          <div class="insight-card">
+            <span>Avg. Saving / Project</span>
+            <strong id="insightAvgSaving">৳ 0 BDT</strong>
+            <small>Across Filtered Scope</small>
           </div>
-        </div>
-
-        <!-- 3. Engineer Bar Chart -->
-        <div class="panel">
-          <div class="panel-header">
-            <h4>Engineer / Concern Person (Top 7)</h4>
+          <div class="insight-card">
+            <span>Top Category</span>
+            <strong id="insightTopCategory" style="font-size: 11.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">-</strong>
+            <small id="insightTopCatPct">0.0% of selected</small>
           </div>
-          <div style="flex: 1; min-height: 185px;">
-            <canvas id="engineerBarChart"></canvas>
+          <div class="insight-card">
+            <span>Total Pipeline</span>
+            <strong id="insightPipeline">৳ 0 BDT</strong>
+            <small>Potential Value</small>
           </div>
         </div>
       </div>
 
-      <!-- BOTTOM ROW -->
-      <div class="bottom-row">
-        <!-- PROJECT PORTFOLIO TABLE -->
-        <div class="panel">
-          <div class="table-tools">
-            <div class="panel-header" style="margin-bottom: 0;">
-              <h4><i class="fa-solid fa-table-list"></i> Project Portfolio</h4>
-            </div>
-            <div style="display: flex; gap: 6px;">
-              <input type="text" id="tableSearch" class="input-search" placeholder="Search project, concern..." onkeyup="applyFilters()">
-              <select id="tableSort" class="ctrl-select" onchange="applyFilters()">
-                <option value="savingDesc">Saving (High → Low)</option>
-                <option value="savingAsc">Saving (Low → High)</option>
-              </select>
-            </div>
+      <!-- PROJECT PORTFOLIO TABLE -->
+      <div class="panel">
+        <div class="table-tools">
+          <div class="panel-header" style="margin-bottom: 0;">
+            <h4><i class="fa-solid fa-table-list"></i> Project Portfolio</h4>
           </div>
-          <div style="overflow-x: auto; flex: 1;">
-            <table>
-              <thead>
-                <tr>
-                  <th class="center" style="width: 35px;">#</th>
-                  <th>Project Name</th>
-                  <th>Category</th>
-                  <th class="center">Saving (BDT)</th>
-                  <th class="center">Status</th>
-                  <th class="center">Timeline</th>
-                  <th>Concern Person</th>
-                </tr>
-              </thead>
-              <tbody id="portfolioTableBody"></tbody>
-            </table>
-          </div>
-          <div class="pagination-bar">
-            <span id="pageInfo">Showing 1 - 8 of 0 projects</span>
-            <div class="page-btn-group" id="paginationControls"></div>
+          <div style="display: flex; gap: 6px;">
+            <input type="text" id="tableSearch" class="input-search" placeholder="Search project, concern..." onkeyup="applyFilters()">
+            <select id="tableSort" class="ctrl-select" onchange="applyFilters()">
+              <option value="savingDesc">Saving (High → Low)</option>
+              <option value="savingAsc">Saving (Low → High)</option>
+            </select>
           </div>
         </div>
-
-        <!-- CATEGORY PERFORMANCE -->
-        <div class="panel">
-          <div class="table-tools">
-            <div class="panel-header" style="margin-bottom: 0;">
-              <h4><i class="fa-solid fa-chart-column"></i> Category Wise Performance</h4>
-            </div>
-            <div>
-              <select id="catSort" class="ctrl-select" onchange="applyFilters()">
-                <option value="valDesc">Value (High → Low)</option>
-                <option value="valAsc">Value (Low → High)</option>
-              </select>
-            </div>
-          </div>
-          <div style="overflow-x: auto; flex: 1;">
-            <table>
-              <thead>
-                <tr>
-                  <th class="center" style="width: 30px;">#</th>
-                  <th>Category</th>
-                  <th class="center">Total</th>
-                  <th class="center">Done</th>
-                  <th class="center">Value (BDT)</th>
-                </tr>
-              </thead>
-              <tbody id="categoryTableBody"></tbody>
-            </table>
-          </div>
+        <div style="overflow-x: auto; flex: 1;">
+          <table>
+            <thead>
+              <tr>
+                <th class="center" style="width: 35px;">#</th>
+                <th>Project Name</th>
+                <th>Category</th>
+                <th class="center">Saving (BDT)</th>
+                <th class="center">Status</th>
+                <th class="center">Timeline</th>
+                <th>Concern Person</th>
+              </tr>
+            </thead>
+            <tbody id="portfolioTableBody"></tbody>
+          </table>
+        </div>
+        <div class="pagination-bar">
+          <span id="pageInfo">Showing 1 - 8 of 0 projects</span>
+          <div class="page-btn-group" id="paginationControls"></div>
         </div>
       </div>
 
-    </div> <!-- END HIDEABLE SECTION -->
+      <!-- CATEGORY PERFORMANCE -->
+      <div class="panel">
+        <div class="panel-header">
+          <h4><i class="fa-solid fa-chart-column"></i> Category Wise Performance</h4>
+        </div>
+        <div style="overflow-x: auto;">
+          <table>
+            <thead>
+              <tr>
+                <th class="center" style="width: 30px;">#</th>
+                <th>Category</th>
+                <th class="center">Total</th>
+                <th class="center">Done</th>
+                <th class="center">Value (BDT)</th>
+              </tr>
+            </thead>
+            <tbody id="categoryTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
 
     <!-- FOOTER -->
     <div class="app-footer">
@@ -926,7 +898,6 @@
       </div>
 
       <span>Innovation &nbsp;|&nbsp; Efficiency &nbsp;|&nbsp; Sustainable Growth</span>
-      <span class="dev-credit">Developed by Md. pearul islam (54636)</span>
       <span>Process Development Department &nbsp;|&nbsp; Walton PLC</span>
     </div>
 
@@ -956,49 +927,6 @@
     let donutChart = null;
     let engineerChart = null;
 
-    function toggleTheme() {
-      const body = document.body;
-      const themeBtn = document.getElementById("themeToggleBtn");
-      
-      body.classList.toggle("light-mode");
-      
-      if (body.classList.contains("light-mode")) {
-        localStorage.setItem("dashboard_theme", "light");
-        themeBtn.innerHTML = `<i class="fa-solid fa-sun"></i> Dark Mode`;
-      } else {
-        localStorage.setItem("dashboard_theme", "dark");
-        themeBtn.innerHTML = `<i class="fa-solid fa-moon"></i> Light Mode`;
-      }
-      
-      if (parsedProjectList.length > 0) {
-        applyFilters();
-      }
-    }
-
-    window.addEventListener("DOMContentLoaded", () => {
-      const savedTheme = localStorage.getItem("dashboard_theme");
-      if (savedTheme === "light") {
-        document.body.classList.add("light-mode");
-        document.getElementById("themeToggleBtn").innerHTML = `<i class="fa-solid fa-sun"></i> Dark Mode`;
-      }
-    });
-
-    function toggleMainSection() {
-      const section = document.getElementById("hideableSection");
-      const btn = document.getElementById("toggleViewsBtn");
-      
-      section.classList.toggle("hidden");
-      
-      if (section.classList.contains("hidden")) {
-        btn.innerHTML = `<i class="fa-solid fa-eye"></i> Show Charts & Tables`;
-      } else {
-        btn.innerHTML = `<i class="fa-solid fa-eye-slash"></i> Hide Charts & Tables`;
-        setTimeout(() => {
-          applyFilters();
-        }, 50);
-      }
-    }
-
     function parseMoney(val) {
       if (!val) return 0;
       let clean = String(val).replace(/[^0-9.]/g, '');
@@ -1026,7 +954,7 @@
       if (!rawVal) return "Unscheduled";
       let str = String(rawVal).trim();
       if (/^[a-zA-Z]+\s*\/\s*\d{4}$/.test(str)) {
-        return `${str.split('/')[0].trim()} / ${str.split('/')[1].trim()}`;
+        return `${parts[0].trim()} / ${parts[1].trim()}`;
       }
       let d = new Date(str);
       if (!isNaN(d.getTime())) {
@@ -1099,7 +1027,7 @@
       let isAllChecked = (catArray.length > 0 && selectedCategories.size === catArray.length);
 
       let html = `
-        <label class="multiselect-item" style="font-weight: 700;">
+        <label class="multiselect-item" style="font-weight: 700; color: #fff;">
           <input type="checkbox" id="selectAllCat" onchange="toggleSelectAllCategories(this)" ${isAllChecked ? 'checked' : ''}>
           <span>Select All</span>
         </label>
@@ -1234,7 +1162,6 @@
       const eng = document.getElementById("engineerFilter").value.trim().toLowerCase();
       const search = document.getElementById("tableSearch").value.trim().toLowerCase();
       const sortMode = document.getElementById("tableSort").value;
-      const catSortMode = document.getElementById("catSort").value;
 
       const masterFilteredProjects = parsedProjectList.filter(p => {
         let mCat = selectedCategories.has(p.cat);
@@ -1246,7 +1173,7 @@
       updateAllCardsAndInsights(masterFilteredProjects);
       renderTop4(masterFilteredProjects);
       renderCharts(masterFilteredProjects);
-      renderCategorySummary(masterFilteredProjects, catSortMode);
+      renderCategorySummary(masterFilteredProjects);
 
       const tableFiltered = masterFilteredProjects.filter(p => {
         return p.name.toLowerCase().includes(search) || p.person.toLowerCase().includes(search);
@@ -1267,6 +1194,8 @@
       let completedSavings = 0;
       let ongoingSavings = 0;
 
+      let catSummary = {};
+
       filteredProjects.forEach(p => {
         totalSavings += p.cost;
         if (p.status === "Completed") {
@@ -1276,6 +1205,8 @@
           ongoingCount++;
           ongoingSavings += p.cost;
         }
+
+        catSummary[p.cat] = (catSummary[p.cat] || 0) + p.cost;
       });
 
       let completedPct = totalCount ? Math.round((completedCount / totalCount) * 100) : 0;
@@ -1284,14 +1215,12 @@
 
       document.getElementById("kpiTotalProjects").innerText = totalCount;
       document.getElementById("kpiCompletedProjects").innerText = completedCount;
+      document.getElementById("kpiCompletedVal").innerText = formatMoneyBDT(completedSavings);
       document.getElementById("kpiCompletedPct").innerText = `${completedPct}%`;
 
-      // সম্পূর্ণ BDT ফরম্যাটে দেখানো
-      document.getElementById("kpiCompletedVal").innerText = formatMoneyBDT(completedSavings);
       document.getElementById("kpiOngoingProjects").innerText = ongoingCount;
-      document.getElementById("kpiOngoingPct").innerText = `${ongoingPct}%`;
       document.getElementById("kpiOngoingVal").innerText = formatMoneyBDT(ongoingSavings);
-
+      document.getElementById("kpiOngoingPct").innerText = `${ongoingPct}%`;
       document.getElementById("kpiFinancialCompletion").innerText = `${financialPct}%`;
 
       const planInput = document.getElementById("productionPlanInput");
@@ -1311,6 +1240,29 @@
         document.getElementById("acCompletedSaving").innerText = "৳ 0 BDT";
         document.getElementById("acOngoingSaving").innerText = "৳ 0 BDT";
       }
+
+      let realization = totalSavings > 0 ? ((completedSavings / totalSavings) * 100).toFixed(1) : "0.0";
+      document.getElementById("insightRealization").innerText = `${realization}%`;
+
+      let perAc = planUnits > 0 ? Math.round(totalSavings / planUnits) : 0;
+      document.getElementById("insightSavingsPerAc").innerText = `${formatMoneyBDT(perAc)} / AC`;
+
+      let avgCost = filteredProjects.length > 0 ? Math.round(totalSavings / filteredProjects.length) : 0;
+      document.getElementById("insightAvgSaving").innerText = formatMoneyBDT(avgCost);
+
+      let topCat = "-";
+      let topVal = 0;
+      Object.keys(catSummary).forEach(c => {
+        if (catSummary[c] > topVal) {
+          topVal = catSummary[c];
+          topCat = c;
+        }
+      });
+      document.getElementById("insightTopCategory").innerText = topCat;
+      let topPct = totalSavings > 0 ? ((topVal / totalSavings) * 100).toFixed(1) : "0.0";
+      document.getElementById("insightTopCatPct").innerText = `${topPct}% of selected`;
+
+      document.getElementById("insightPipeline").innerText = formatMoneyBDT(ongoingSavings);
     }
 
     function renderTop4(filteredProjects) {
@@ -1341,7 +1293,7 @@
       `).join('');
     }
 
-    function renderCategorySummary(filteredProjects, sortMode = 'valDesc') {
+    function renderCategorySummary(filteredProjects) {
       const tbody = document.getElementById("categoryTableBody");
       let catMap = {};
 
@@ -1352,31 +1304,19 @@
         if (p.status === "Completed") catMap[p.cat].completed++;
       });
 
-      let catArray = Object.keys(catMap).map(c => ({
-        name: c,
-        total: catMap[c].total,
-        completed: catMap[c].completed,
-        value: catMap[c].value
-      }));
-
-      if (sortMode === 'valDesc') {
-        catArray.sort((a, b) => b.value - a.value);
-      } else if (sortMode === 'valAsc') {
-        catArray.sort((a, b) => a.value - b.value);
-      }
-
-      if (catArray.length === 0) {
+      const keys = Object.keys(catMap);
+      if (keys.length === 0) {
         tbody.innerHTML = `<tr><td colspan="5" class="center" style="padding:12px; color:var(--text-sub);">No category data found</td></tr>`;
         return;
       }
 
-      tbody.innerHTML = catArray.slice(0, 6).map((item, i) => `
+      tbody.innerHTML = keys.slice(0, 6).map((c, i) => `
         <tr>
           <td class="center" style="font-weight:700; color:var(--text-sub);">${i + 1}</td>
-          <td style="font-weight:600;">${item.name}</td>
-          <td class="center">${item.total}</td>
-          <td class="center" style="color:var(--accent-green); font-weight:700;">${item.completed}</td>
-          <td class="center" style="color:var(--accent-cyan); font-weight:700;">${formatMoneyBDT(item.value)}</td>
+          <td style="font-weight:600;">${c}</td>
+          <td class="center">${catMap[c].total}</td>
+          <td class="center" style="color:var(--accent-green); font-weight:700;">${catMap[c].completed}</td>
+          <td class="center" style="color:var(--accent-cyan); font-weight:700;">${formatMoneyBDT(catMap[c].value)}</td>
         </tr>
       `).join('');
     }
@@ -1397,9 +1337,7 @@
         totalFiltered += p.cost;
       });
 
-      const isLight = document.body.classList.contains('light-mode');
-
-      // 1. MONTHLY TREND CHART
+      // 1. MONTHLY TREND CHART (Clean, Sharp & High-Contrast)
       const ctxLine = document.getElementById("savingsTrendChart").getContext("2d");
       const monthOrder = { "Jan": 0, "Feb": 1, "Mar": 2, "Apr": 3, "May": 4, "Jun": 5, "Jul": 6, "Aug": 7, "Sep": 8, "Oct": 9, "Nov": 10, "Dec": 11 };
       const labels = Object.keys(timelineMap).sort((a, b) => {
@@ -1425,100 +1363,112 @@
       lineGradient.addColorStop(1, 'rgba(0, 229, 255, 0.0)');
 
       if (trendChart) {
-        trendChart.destroy();
-      }
-      
-      trendChart = new Chart(ctxLine, {
-        type: 'bar',
-        data: {
-          labels,
-          datasets: [
-            { 
-              type: 'bar', 
-              label: 'Monthly Savings', 
-              data: monthlyVals, 
-              backgroundColor: barGradient, 
-              borderRadius: 4, 
-              barPercentage: 0.5,
-              datalabels: { display: false } 
-            },
-            { 
-              type: 'line', 
-              label: 'Cumulative Total', 
-              data: cumulativeVals, 
-              borderColor: '#00e5ff', 
-              borderWidth: 2.5,
-              backgroundColor: lineGradient, 
-              fill: true, 
-              tension: 0.32, 
-              pointRadius: 4, 
-              pointHoverRadius: 7,
-              pointBackgroundColor: '#ffffff',
-              pointBorderColor: '#00e5ff',
-              pointBorderWidth: 2,
-              datalabels: {
-                display: function(context) {
-                  const total = context.dataset.data.length;
-                  const idx = context.dataIndex;
-                  return idx === 0 || idx === total - 1 || idx % 2 === 0;
-                },
-                align: 'top',
-                offset: 7,
-                color: isLight ? '#1e293b' : '#ffffff',
-                backgroundColor: isLight ? 'rgba(241, 245, 249, 0.95)' : 'rgba(7, 19, 34, 0.95)',
-                borderColor: 'rgba(0, 229, 255, 0.65)',
-                borderWidth: 1,
-                borderRadius: 12,
-                padding: { top: 2, bottom: 2, left: 6, right: 6 },
-                font: { weight: '800', size: 9 },
-                formatter: (v) => formatCompactBDT(v)
-              }
-            }
-          ]
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          animation: false,
-          layout: { padding: { top: 28, bottom: 5, left: 5, right: 15 } },
-          interaction: { mode: 'index', intersect: false },
-          plugins: {
-            legend: { display: false },
-            tooltip: {
-              backgroundColor: isLight ? '#ffffff' : '#071322',
-              titleColor: '#00e5ff',
-              titleFont: { weight: 'bold', size: 11 },
-              bodyColor: isLight ? '#1e293b' : '#ffffff',
-              bodyFont: { size: 10.5 },
-              borderColor: '#122842',
-              borderWidth: 1,
-              padding: 10,
-              displayColors: true,
-              boxPadding: 4,
-              callbacks: {
-                label: function(context) {
-                  return ` ${context.dataset.label}: ${formatMoneyBDT(context.raw)}`;
+        trendChart.data.labels = labels;
+        trendChart.data.datasets[0].data = monthlyVals;
+        trendChart.data.datasets[1].data = cumulativeVals;
+        trendChart.update('none');
+      } else {
+        trendChart = new Chart(ctxLine, {
+          type: 'bar',
+          data: {
+            labels,
+            datasets: [
+              { 
+                type: 'bar', 
+                label: 'Monthly Savings', 
+                data: monthlyVals, 
+                backgroundColor: barGradient, 
+                borderRadius: 4, 
+                barPercentage: 0.5,
+                datalabels: { display: false } 
+              },
+              { 
+                type: 'line', 
+                label: 'Cumulative Total', 
+                data: cumulativeVals, 
+                borderColor: '#00e5ff', 
+                borderWidth: 2.5,
+                backgroundColor: lineGradient, 
+                fill: true, 
+                tension: 0.32, 
+                pointRadius: 4, 
+                pointHoverRadius: 7,
+                pointBackgroundColor: '#ffffff',
+                pointBorderColor: '#00e5ff',
+                pointBorderWidth: 2,
+                datalabels: {
+                  display: function(context) {
+                    const total = context.dataset.data.length;
+                    const idx = context.dataIndex;
+                    return idx === 0 || idx === total - 1 || idx % 2 === 0;
+                  },
+                  align: 'top',
+                  offset: 7,
+                  color: '#ffffff',
+                  backgroundColor: 'rgba(7, 19, 34, 0.95)',
+                  borderColor: 'rgba(0, 229, 255, 0.65)',
+                  borderWidth: 1,
+                  borderRadius: 12,
+                  padding: { top: 2, bottom: 2, left: 6, right: 6 },
+                  font: { weight: '800', size: 9 },
+                  formatter: (v) => formatCompactBDT(v)
                 }
               }
-            }
+            ]
           },
-          scales: {
-            x: { 
-              ticks: { color: isLight ? '#334155' : '#94a3b8', font: { size: 9, weight: '600' } }, 
-              grid: { display: false } 
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            animation: false,
+            layout: { padding: { top: 28, bottom: 5, left: 5, right: 15 } },
+            interaction: {
+              mode: 'index',
+              intersect: false
             },
-            y: { 
-              ticks: { 
-                color: isLight ? '#334155' : '#94a3b8', 
-                font: { size: 9, weight: '700' },
-                maxTicksLimit: 4,
-                callback: function(value) { return formatCompactBDT(value); }
-              }, 
-              grid: { color: isLight ? 'rgba(203, 213, 225, 0.6)' : 'rgba(15, 43, 82, 0.6)', borderDash: [3, 3] } 
+            plugins: {
+              legend: { display: false },
+              tooltip: {
+                backgroundColor: '#071322',
+                titleColor: '#00e5ff',
+                titleFont: { weight: 'bold', size: 11 },
+                bodyColor: '#ffffff',
+                bodyFont: { size: 10.5 },
+                borderColor: '#122842',
+                borderWidth: 1,
+                padding: 10,
+                displayColors: true,
+                boxPadding: 4,
+                callbacks: {
+                  label: function(context) {
+                    return ` ${context.dataset.label}: ${formatMoneyBDT(context.raw)}`;
+                  }
+                }
+              }
+            },
+            scales: {
+              x: { 
+                ticks: { 
+                  color: '#94a3b8', 
+                  font: { size: 9, weight: '600' }
+                }, 
+                grid: { display: false } 
+              },
+              y: { 
+                ticks: { 
+                  color: '#94a3b8', 
+                  font: { size: 9, weight: '700' },
+                  maxTicksLimit: 4,
+                  callback: function(value) { return formatCompactBDT(value); }
+                }, 
+                grid: { 
+                  color: 'rgba(18, 40, 66, 0.6)',
+                  borderDash: [3, 3]
+                } 
+              }
             }
           }
-        }
-      });
+        });
+      }
 
       // 2. 3D DOUGHNUT CHART
       const ctxDonut = document.getElementById("categoryDonutChart").getContext("2d");
@@ -1526,35 +1476,37 @@
       const catVals = catLabels.map(k => Math.round(catMap[k]));
       const colors = ['#00e5ff', '#00e676', '#ff9100', '#d500f9', '#ffd600', '#2979ff', '#ff1744', '#76ff03'];
 
-      document.getElementById("donutCenterTotal").innerText = formatMoneyBDT(totalFiltered);
+      document.getElementById("donutCenterTotal").innerText = formatCompactBDT(totalFiltered);
 
       if (donutChart) {
-        donutChart.destroy();
+        donutChart.data.labels = catLabels;
+        donutChart.data.datasets[0].data = catVals;
+        donutChart.update('none');
+      } else {
+        donutChart = new Chart(ctxDonut, {
+          type: 'doughnut',
+          data: { 
+            labels: catLabels, 
+            datasets: [{ 
+              data: catVals, 
+              backgroundColor: colors, 
+              borderColor: '#030a14', 
+              borderWidth: 2.5,
+              hoverOffset: 6
+            }] 
+          },
+          options: { 
+            responsive: true, 
+            maintainAspectRatio: false, 
+            animation: false, 
+            plugins: { 
+              legend: { display: false }, 
+              datalabels: { display: false } 
+            }, 
+            cutout: '66%' 
+          }
+        });
       }
-      
-      donutChart = new Chart(ctxDonut, {
-        type: 'doughnut',
-        data: { 
-          labels: catLabels, 
-          datasets: [{ 
-            data: catVals, 
-            backgroundColor: colors, 
-            borderColor: isLight ? '#ffffff' : '#030a14', 
-            borderWidth: 2.5,
-            hoverOffset: 6
-          }] 
-        },
-        options: { 
-          responsive: true, 
-          maintainAspectRatio: false, 
-          animation: false, 
-          plugins: { 
-            legend: { display: false }, 
-            datalabels: { display: false } 
-          }, 
-          cutout: '66%' 
-        }
-      });
 
       const legendBox = document.getElementById("donutLegendContainer");
       if (catLabels.length === 0) {
@@ -1569,7 +1521,7 @@
                 <i class="fa-solid fa-circle" style="color:${color}; font-size:6px;"></i>
                 ${l}
               </span>
-              <strong>${pct}% <small style="color:${color};">(${formatMoneyBDT(catMap[l])})</small></strong>
+              <strong>${pct}% <small style="color:${color};">(${formatCompactBDT(catMap[l])})</small></strong>
             </div>
           `;
         }).join('');
@@ -1586,55 +1538,58 @@
       hBarGradient.addColorStop(1, '#0091ea');
 
       if (engineerChart) {
-        engineerChart.destroy();
-      }
-      
-      engineerChart = new Chart(ctxEng, {
-        type: 'bar',
-        data: {
-          labels: engSorted,
-          datasets: [{
-            data: engCounts,
-            costs: engCosts,
-            backgroundColor: hBarGradient,
-            borderRadius: 4,
-            datalabels: {
-              anchor: 'end', 
-              align: 'right', 
-              color: isLight ? '#1e293b' : '#fff', 
-              font: { size: 9.5, weight: 'bold' },
-              formatter: (val, ctx) => `${val} (${formatMoneyBDT(ctx.dataset.costs[ctx.dataIndex])})`
-            }
-          }]
-        },
-        options: {
-          indexAxis: 'y', 
-          responsive: true, 
-          maintainAspectRatio: false, 
-          animation: false, 
-          layout: { padding: { right: 120 } }, 
-          plugins: { 
-            legend: { display: false },
-            tooltip: {
-              callbacks: {
-                label: function(ctx) {
-                  return `Projects: ${ctx.raw} | Savings: ${formatMoneyBDT(ctx.dataset.costs[ctx.dataIndex])}`;
+        engineerChart.data.labels = engSorted;
+        engineerChart.data.datasets[0].data = engCounts;
+        engineerChart.data.datasets[0].costs = engCosts;
+        engineerChart.update('none');
+      } else {
+        engineerChart = new Chart(ctxEng, {
+          type: 'bar',
+          data: {
+            labels: engSorted,
+            datasets: [{
+              data: engCounts,
+              costs: engCosts,
+              backgroundColor: hBarGradient,
+              borderRadius: 4,
+              datalabels: {
+                anchor: 'end', 
+                align: 'right', 
+                color: '#fff', 
+                font: { size: 9.5, weight: 'bold' },
+                formatter: (val, ctx) => `${val} (${formatCompactBDT(ctx.dataset.costs[ctx.dataIndex])})`
+              }
+            }]
+          },
+          options: {
+            indexAxis: 'y', 
+            responsive: true, 
+            maintainAspectRatio: false, 
+            animation: false, 
+            layout: { padding: { right: 90 } },
+            plugins: { 
+              legend: { display: false },
+              tooltip: {
+                callbacks: {
+                  label: function(ctx) {
+                    return `Projects: ${ctx.raw} | Savings: ${formatMoneyBDT(ctx.dataset.costs[ctx.dataIndex])}`;
+                  }
                 }
               }
-            }
-          },
-          scales: {
-            x: { ticks: { color: isLight ? '#334155' : '#94a3b8', font: { size: 9 } }, grid: { color: isLight ? '#cbd5e1' : '#122842' } },
-            y: { 
-              ticks: { 
-                color: isLight ? '#1e293b' : '#ffffff', 
-                font: { size: 10.5, weight: '700' } 
-              }, 
-              grid: { display: false } 
+            },
+            scales: {
+              x: { ticks: { color: '#94a3b8', font: { size: 9 } }, grid: { color: '#122842' } },
+              y: { 
+                ticks: { 
+                  color: '#ffffff',
+                  font: { size: 10.5, weight: '700' } 
+                }, 
+                grid: { display: false } 
+              }
             }
           }
-        }
-      });
+        });
+      }
     }
 
     function renderTablePaginated(projects) {
@@ -1660,11 +1615,11 @@
       tbody.innerHTML = currentSlice.map((p, idx) => `
         <tr>
           <td class="center" style="color:var(--text-sub); font-weight:700;">${startIdx + idx + 1}</td>
-          <td style="font-weight:600; color:var(--text-main);">${p.name}</td>
+          <td style="font-weight:600; color:#fff;">${p.name}</td>
           <td><span class="tag-cat">${p.cat}</span></td>
           <td class="center" style="color:var(--accent-cyan); font-weight:700;">${formatMoneyBDT(p.cost)}</td>
           <td class="center"><span class="pill-status ${p.status === 'Completed' ? 'done' : 'prog'}">${p.status}</span></td>
-          <td class="center" style="color:var(--text-sub);">${p.timeline}</td>
+          <td class="center" style="color:#cbd5e1;">${p.timeline}</td>
           <td>${p.person}</td>
         </tr>
       `).join('');
